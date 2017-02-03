@@ -1,0 +1,45 @@
+
+<html>
+    <style>
+        form {
+            border: 3px solid #f1f1f1;
+            width: 40%
+
+        }
+
+        input[type=text], 
+        input[type=password] {
+            width: 30%;
+            padding: 12px 20px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+/*        button {
+                      background-color: #0000FF;
+                        color: white;
+            padding: 14px 20px;
+            margin:5px 0;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            text-align: center;
+        }*/
+    </style>
+
+    <h1> Angular JS |Basic Login Form</h1>
+    <div ng-controller="loginCtrl">
+        <form  name='myForm' action="/" id="myLogin">
+            Username:<input type="text" placeholder="Enter username here"  name="username" id="username" ng-model="username"><br><br>
+            Password:<input type="{{inputType}}" placeholder="Enter password here" ng-model="password" />
+            <input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
+            <label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
+            <label for="checkbox" ng-if="!passwordCheckbox">Show password</label>  
+            <br><br>
+            <button type="button" ng-click="submit()" >Login</button>
+    
+        </form>
+
+    </div>
